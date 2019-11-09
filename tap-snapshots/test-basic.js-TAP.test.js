@@ -19,6 +19,7 @@ exports[`test/basic.js TAP basic sorting operation with default 2-space indent >
     "a": {}
   }
 }
+
 `
 
 exports[`test/basic.js TAP replacer function is used > replace a val with phone doggo 1`] = `
@@ -44,6 +45,7 @@ exports[`test/basic.js TAP replacer function is used > replace a val with phone 
     }
   }
 }
+
 `
 
 exports[`test/basic.js TAP sort keys explicitly with a preference list > replace a val with preferences 1`] = `
@@ -62,6 +64,7 @@ exports[`test/basic.js TAP sort keys explicitly with a preference list > replace
     }
   }
 }
+
 `
 
 exports[`test/basic.js TAP spaces can be set > boolean false 1`] = `
@@ -86,6 +89,7 @@ exports[`test/basic.js TAP spaces can be set > space face 1`] = `
  ^_^  ^_^ "a": {}
  ^_^ }
 }
+
 `
 
 exports[`test/basic.js TAP spaces can be set > tab 1`] = `
@@ -102,6 +106,7 @@ exports[`test/basic.js TAP spaces can be set > tab 1`] = `
 		"a": {}
 	}
 }
+
 `
 
 exports[`test/basic.js TAP spaces can be set > the number 3 1`] = `
@@ -118,4 +123,5 @@ exports[`test/basic.js TAP spaces can be set > the number 3 1`] = `
       "a": {}
    }
 }
+
 `

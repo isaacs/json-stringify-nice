@@ -35,3 +35,4 @@ const sort = (replacer, seen) => (key, val) => {
 
 module.exports = (obj, replacer, space = 2) =>
   JSON.stringify(obj, sort(replacer, new Map()), space)
+  + (space ? '\n' : '')
