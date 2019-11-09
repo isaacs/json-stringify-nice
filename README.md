@@ -47,6 +47,30 @@ console.log(stringify(obj))
 }
 */
 
+// specify an array of keys if you have some that you prefer
+// to be sorted in a specific order.  preferred keys come before
+// any other keys, and in the order specified, but objects are
+// still sorted AFTER scalars, so the preferences only apply
+// when both values are objects or both are non-objects.
+console.log(stringify(obj, ['z', 'yy', 'obj']))
+/* output
+{
+  "z": 1, <-- z comes before other scalars
+  "yy": "a", <-- yy comes after z, but before other scalars
+  "y": "z", <-- then all the other scalar values
+  "obj": { <-- obj comes before other objects, but after scalars
+    "b": "x",
+    "a": {}
+  },
+  "a": {
+    "b": 1,
+    "a": {
+      "nested": true
+    }
+  }
+}
+*/
+
 // can also specify a replacer or indent value like with JSON.stringify
 // this turns all values with an 'a' key into a doggo meme from 2011
 const replacer = (key, val) =>

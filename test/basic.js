@@ -53,3 +53,16 @@ t.test('replacer function is used', t => {
     : val
   t.matchSnapshot(stringify(obj, replacer), 'replace a val with phone doggo')
 })
+
+t.test('sort keys explicitly with a preference list', t => {
+  t.plan(1)
+  const obj = {
+    z: 1,
+    y: 'z',
+    obj: { a: {}, b: 'x' },
+    a: { b: 1, a: { nested: true} },
+    yy: 'a',
+  }
+  const preference = ['obj', 'z', 'yy']
+  t.matchSnapshot(stringify(obj, preference), 'replace a val with preferences')
+})

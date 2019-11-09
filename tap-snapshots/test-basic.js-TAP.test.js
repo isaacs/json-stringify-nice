@@ -46,6 +46,24 @@ exports[`test/basic.js TAP replacer function is used > replace a val with phone 
 }
 `
 
+exports[`test/basic.js TAP sort keys explicitly with a preference list > replace a val with preferences 1`] = `
+{
+  "z": 1,
+  "yy": "a",
+  "y": "z",
+  "obj": {
+    "b": "x",
+    "a": {}
+  },
+  "a": {
+    "b": 1,
+    "a": {
+      "nested": true
+    }
+  }
+}
+`
+
 exports[`test/basic.js TAP spaces can be set > boolean false 1`] = `
 {"y":"z","yy":"a","z":1,"a":{"a":2,"b":1},"obj":{"b":"x","a":{}}}
 `
