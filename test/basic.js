@@ -66,3 +66,14 @@ t.test('sort keys explicitly with a preference list', t => {
   const preference = ['obj', 'z', 'yy']
   t.matchSnapshot(stringify(obj, preference), 'replace a val with preferences')
 })
+
+t.test('dont be confused by empty strings or other falsey values', t => {
+  const obj = {
+    z: '',
+    y: null,
+    w: false,
+    x: 0,
+  }
+  t.matchSnapshot(stringify(obj), 'sort alphabetically')
+  t.end()
+})

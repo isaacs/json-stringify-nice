@@ -22,6 +22,16 @@ exports[`test/basic.js TAP basic sorting operation with default 2-space indent >
 
 `
 
+exports[`test/basic.js TAP dont be confused by empty strings or other falsey values > sort alphabetically 1`] = `
+{
+  "w": false,
+  "x": 0,
+  "y": null,
+  "z": ""
+}
+
+`
+
 exports[`test/basic.js TAP replacer function is used > replace a val with phone doggo 1`] = `
 {
   "y": "z",
