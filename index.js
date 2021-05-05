@@ -5,7 +5,7 @@ const compare = (ak, bk, prefKeys) =>
   : prefKeys.includes(bk) && !prefKeys.includes(ak) ? 1
   : prefKeys.includes(ak) && prefKeys.includes(bk)
     ? prefKeys.indexOf(ak) - prefKeys.indexOf(bk)
-  : ak.localeCompare(bk)
+  : ak > bk ? 1 : (ak < bk ? -1 : 0)
 
 const sort = (replacer, seen) => (key, val) => {
   const prefKeys = Array.isArray(replacer) ? replacer : []
