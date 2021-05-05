@@ -17,6 +17,9 @@
     "postpublish": "git push origin --follow-tags"
   },
   "tap": {
+    "test-env": [
+      "LC_ALL=sk"
+    ],
     "check-coverage": true
   },
   "devDependencies": {

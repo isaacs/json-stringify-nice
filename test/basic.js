@@ -4,6 +4,9 @@ const stringify = require('../')
 t.test('basic sorting operation with default 2-space indent', t => {
   t.plan(1)
   t.matchSnapshot(stringify({
+    c: 1,
+    ch: 2,
+    d: 3,
     z: 1,
     y: 'z',
     obj: { a: {}, b: 'x' },

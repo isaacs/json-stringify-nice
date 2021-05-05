@@ -7,6 +7,9 @@
 'use strict'
 exports[`test/basic.js TAP basic sorting operation with default 2-space indent > mix of objects and out of order keys 1`] = `
 {
+  "c": 1,
+  "ch": 2,
+  "d": 3,
   "y": "z",
   "yy": "a",
   "z": 1,
