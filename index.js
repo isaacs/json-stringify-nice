@@ -1,13 +1,13 @@
 const isObj = val => !!val && !Array.isArray(val) && typeof val === 'object'
 
-const compare = (ak, bk, prefKeys) =>
+const compare = (ak, bk, prefKeys, locale) =>
   prefKeys.includes(ak) && !prefKeys.includes(bk) ? -1
   : prefKeys.includes(bk) && !prefKeys.includes(ak) ? 1
   : prefKeys.includes(ak) && prefKeys.includes(bk)
     ? prefKeys.indexOf(ak) - prefKeys.indexOf(bk)
-  : ak > bk ? 1 : (ak < bk ? -1 : 0)
+  : ak.localeCompare(bk, locale)
 
-const sort = (replacer, seen) => (key, val) => {
+const sort = (replacer, seen, locale) => (key, val) => {
   const prefKeys = Array.isArray(replacer) ? replacer : []
 
   if (typeof replacer === 'function')
@@ -21,7 +21,7 @@ const sort = (replacer, seen) => (key, val) => {
 
   const ret = Object.entries(val).sort(
     ([ak, av], [bk, bv]) =>
-      isObj(av) === isObj(bv) ? compare(ak, bk, prefKeys)
+      isObj(av) === isObj(bv) ? compare(ak, bk, prefKeys, locale)
       : isObj(av) ? 1
       : -1
   ).reduce((set, [k, v]) => {
@@ -33,6 +33,6 @@ const sort = (replacer, seen) => (key, val) => {
   return ret
 }
 
-module.exports = (obj, replacer, space = 2) =>
-  JSON.stringify(obj, sort(replacer, new Map()), space)
+module.exports = (obj, replacer, space = 2, locale) =>
+  JSON.stringify(obj, sort(replacer, new Map(), locale), space)
   + (space ? '\n' : '')
